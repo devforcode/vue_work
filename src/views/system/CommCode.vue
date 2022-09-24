@@ -227,14 +227,18 @@ export default {
     },
   }),
   mounted() {
-    /*this.$axios({ url: "api/get", method: "get" }).then((res) => {
-      console.log(res.data.result);
-      if (res.data.result === "OK") {
-        this.$refs.tuigrid.invoke("resetData", res.data.data.Value);
+    let param = { test: "1" };
+
+    this.$axios({ url: "api/get", method: "get", params: { param } }).then(
+      (res) => {
+        console.log(res.data.result);
+        if (res.data.result === "OK") {
+          this.$refs.tuigrid.invoke("resetData", res.data.data.Value);
+        }
       }
-    });*/
+    );
     // this.$axios({ url: 'api/post', method:'post',params: {procName:'김길동'}, data: [{name:'test'}]}).then(res=>{})
-    this.init();
+    //this.init();
   },
 
   methods: {
